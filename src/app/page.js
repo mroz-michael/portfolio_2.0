@@ -3,11 +3,20 @@
 import { motion } from "framer-motion";
 import { FiRefreshCcw } from "react-icons/fi";
 import { useState } from "react";
-
+import WeatherInfo from "./components/WeatherInfo";
+{/* wait a bit for api key to be activated before integrating <WeatherInfo city={"Dartmouth"}/> */}
+import ButtonGroup from "./components/ButtonGroup";
 export default function HomePage() {
   const titleText = "Hi, I'm Michael :)";
   const subText = "Student | Aspiring Developer";
+  /*to force rerender and play animation again on click*/
   const [reRender, setReRender] = useState(0);
+  /*for ButtonGroup component*/
+  const buttons = [
+    { href: "/projects", label: "View My Projects" },
+    { href: "/about", label: "A Bit About Me" },
+  ];
+
   return (
     <main className="flex flex-col items-center justify-center min-h-screen text-center">
 
@@ -60,23 +69,9 @@ export default function HomePage() {
                 Replay animation
           </span>
         </div>
-
-     <section className="mt-10 flex flex-col md:flex-row md:gap-4">
-        <a
-          href="/projects"
-          className="mt-6 px-6 py-3 text-lg font-semibold text-gray-900 bg-green-400 rounded-lg hover:bg-green-500 transition"
-        >
-          View My Projects
-        </a>
-        <a
-          href="/about"
-          className="mt-6 px-6 py-3 text-lg font-semibold text-gray-900 bg-green-400 rounded-lg hover:bg-green-500 transition"
-        >
-          A Bit About Me
-        </a>
-      </section>
+        <ButtonGroup buttons={buttons}/>
         <footer>
-
+          
         </footer>
       </main>
   );
