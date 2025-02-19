@@ -6,6 +6,7 @@ import { useState } from "react";
 import WeatherInfo from "./components/WeatherInfo";
 {/* wait a bit for api key to be activated before integrating <WeatherInfo city={"Dartmouth"}/> */}
 import ButtonGroup from "./components/ButtonGroup";
+import SocialLinks from "./components/SocialLinks";
 export default function HomePage() {
   const titleText = "Hi, I'm Michael :)";
   const subText = "Student | Aspiring Developer";
@@ -70,9 +71,7 @@ export default function HomePage() {
           </span>
         </div>
         <ButtonGroup buttons={buttons}/>
-        <footer>
-          
-        </footer>
+        <SocialLinks />
       </main>
   );
 }

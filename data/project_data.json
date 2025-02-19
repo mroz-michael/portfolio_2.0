@@ -1,0 +1,45 @@
+[
+    {
+      "name": "Expense Tracker",
+      "comment": "My most recent project, and my favorite. This one felt more polished than my previous ones, I took this on to build on the foundational database and software development concepts taught in University.",
+      "description": "A command-line Java app equipped with user authentication, a MySQL database and JUnit tests.",
+      "tech_used": ["java", "mysql", "junit"],
+      "github_link": "https://github.com/mroz-michael/expense_tracker"
+    },
+    {
+      "name": "Compiler Front End",
+      "comment": "This was a course project that introduced me to Python and challenged me to creatively solve problems using code. I'm especially proud of how I came up with the solution of using a stack data structure to implement error recovery in the parser",
+      "description": "A scanner and parser that tokenize and parse txt files based on a JSON-like grammar.",
+      "tech_used": ["python"],
+      "github_link": "https://github.com/mroz-michael/compiler_frontend"
+    },
+    {
+      "name": "Solar System Simulator (Team Project)",
+      "comment": "This project was created in collaboration with four other students as part of the NASA SpaceApps 2024 Hackathon. It was my first hackathon and a great learning experience in team development.",
+      "description": "An interactive application developed for NASA SpaceApps 2024, allowing users to explore the dynamics of our solar system through realistic gravitational simulations.",
+      "tech_used": ["react", "node", "css"],
+      "github_link": "https://github.com/ElliotGBA/spaceapps2024"
+    },
+    {
+      "name": "Dal CS Review Site",
+      "comment": "This project built on the MERN basics I learned, teaching me about how database models relationships work in a real-world scenario",
+      "description": "A MERN stack web app with user authentication that displays Dalhousie CS courses, allowing users to create reviews.",
+      "tech_used": ["react", "mongodb", "js", "express", "node", "html", "css"],
+      "github_link": "https://github.com/mroz-michael/cs-dal-courseinfo"
+    },
+    {
+      "name": "CLI Chess",
+      "comment": "After my first year studies, I was eager to use OOP fundamentals to tackle a logic-intensive problem. Even though coding chess is very unoriginal, I'm really proud of this one because I did it all from scratch without using any external resources",
+      "description": "A command line version of Chess using Java Object-Oriented Principles.",
+      "tech_used": ["java"],
+      "github_link": "https://github.com/mroz-michael/cli-chess"
+    },
+    {
+      "name": "Inventory Manager",
+      "comment": "This project was my first step into the world of fullstack development!",
+      "description": "A MERN stack web app that performs CRUD operations on a fictitious inventory of products.",
+      "tech_used": ["react", "mongodb", "js", "express", "node", "html", "css"],
+      "github_link": "https://github.com/mroz-michael/web-inventory_manager"
+    }
+  ]
+  
