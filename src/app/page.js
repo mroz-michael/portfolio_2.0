@@ -1,101 +1,83 @@
-import Image from "next/image";
+"use client"; //tells next.js that this component runs on browser, needed for framer-motion
 
-export default function Home() {
+import { motion } from "framer-motion";
+import { FiRefreshCcw } from "react-icons/fi";
+import { useState } from "react";
+
+export default function HomePage() {
+  const titleText = "Hi, I'm Michael :)";
+  const subText = "Student | Aspiring Developer";
+  const [reRender, setReRender] = useState(0);
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="flex flex-col items-center justify-center min-h-screen text-center">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <h1 className="text-3xl font-bold md:text-6xl">
+        {titleText.split("").map( (char, i) => (
+          <motion.span
+            key={`${reRender} - ${i}`}
+            className="text-white"
+            initial={{ color: "#ffffff"}}
+            animate={{ color: ["#ffffff", "#4ade80", "#ffffff"]}}
+            transition={ {
+              delay: i * 0.1,
+              duration: .2,
+              ease: "easeInOut",
+            }}
+
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            {char}
+          </motion.span>
+        ))}
+      </h1>
+      
+      <div className="relative flex items-center group">
+        <p className="mt-4 text-lg text-gray-300">
+          {subText.split("").map( (char, i) => (
+            <motion.span
+              key={`${reRender} - ${i}`}
+              className="text-white"
+              initial={{ color: "#ffffff"}}
+              animate={{ color: ["#ffffff", "#4ade80", "#ffffff"]}}
+              transition={ {
+                delay: (titleText.length * .1) + i * 0.1, //start it after titleText is done
+                duration: .2,
+                ease: "easeInOut",
+              }}
+
+            >
+              {char}
+            </motion.span>
+          ))}
+        </p>
+        <button 
+          onClick={() => setReRender(prev => prev + 1)}  
+          className="ml-2 p-2 mt-3.5 text-green-500 hover:text-green-500 transition"
+          aria-label="Replay animation"
+        >
+            <FiRefreshCcw size={15} />
+          </button>
+          <span className="absolute left-[100%] bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+                Replay animation
+          </span>
         </div>
+
+     <section className="mt-10 flex flex-col md:flex-row md:gap-4">
+        <a
+          href="/projects"
+          className="mt-6 px-6 py-3 text-lg font-semibold text-gray-900 bg-green-400 rounded-lg hover:bg-green-500 transition"
+        >
+          View My Projects
+        </a>
+        <a
+          href="/about"
+          className="mt-6 px-6 py-3 text-lg font-semibold text-gray-900 bg-green-400 rounded-lg hover:bg-green-500 transition"
+        >
+          A Bit About Me
+        </a>
+      </section>
+        <footer>
+
+        </footer>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
   );
 }
