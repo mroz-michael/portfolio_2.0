@@ -12,6 +12,10 @@
     "deploy": "gh-pages -d out",
     "start": "next start",
     "lint": "next lint"
+  },  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mroz-michael/mroz-michael.github.io.git"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
