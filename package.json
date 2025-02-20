@@ -1,8 +1,9 @@
 {
-  "name": "portfolio2",
+  "name": "mroz-michael-github-io",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://mroz-michael.github.io",
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
