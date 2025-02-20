@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 
-const nextConfig = {
-    output: 'export',
-    basePath: '/mroz-michael.github.io',
-    assetPrefix: '/mroz-michael.github.io/', 
-    images: {
-        unoptimized: true,
-    }};
 
-export default nextConfig;
+const nextConfig = {
+    output: "standalone", // Helps Netlify find assets
+    reactStrictMode: true,
+    trailingSlash: true, // Ensures CSS files get proper paths
+    images: { unoptimized: true }, // Helps with Netlify image issues
+    experimental: { appDir: false } // Ensure Next.js 13+ handles routing properly
+  };
+  
+  export default nextConfig;
